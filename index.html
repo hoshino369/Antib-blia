@@ -1,1 +1,383 @@
-429: Too Many Requests
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Antibíblia </title>
+  <style>
+    :root{
+      --bg:#0b0f13; --text:#e6eef6; --muted:#9aa6b2; --accent:#7dd3fc;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: linear-gradient(180deg,var(--bg), #061018);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:28vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:28px 20px;
+      border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    .hero .title{
+      text-align:left;
+    }
+    .hero h1{font-size:1.6rem;margin:0 0 6px}
+    .hero p{color:var(--muted);margin:0;font-size:0.95rem}
+
+    .counters{
+      text-align:right;
+      font-size:0.95rem;
+      color:var(--muted);
+    }
+    .counters strong{color:var(--accent); display:block; font-size:1.1rem}
+
+    /* CONTENT LONGO PRA TESTAR SCROLL */
+    .content{max-width:880px;margin:24px auto;padding:0 20px 80px}
+    .chapter{
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      padding:18px;
+      border-radius:10px;
+      margin-bottom:20px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .chapter h2{margin-top:0}
+    .book-label{color:var(--muted);font-size:0.9rem;margin-top:8px}
+
+    p{margin:12px 0; white-space:pre-wrap}
+
+    /* BOTÕES FIXOS SUBIR/DESER */
+    .fab{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:999;
+    }
+    .btn-fab{
+      width:52px;height:52px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.05);
+      color:var(--text);cursor:pointer;font-weight:700;font-size:18px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.6);
+      transition:transform .12s ease, opacity .15s;
+    }
+    .btn-fab:hover{transform:translateY(-4px)}
+    .btn-fab[hidden]{opacity:0;pointer-events:none;transform:scale(.95)}
+
+    /* INDICADOR DE PROGRESSO */
+    .prog-wrap{
+      position:fixed;
+      left:0;top:0;
+      width:100%;height:4px;
+      background:transparent;
+      z-index:998
+    }
+    .prog{
+      height:4px;width:0;
+      background:linear-gradient(90deg,var(--accent), #60a5fa);
+      transition:width .08s
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      margin:36px 0 80px;
+    }
+
+    @media (max-width:700px){
+      .hero{flex-direction:column;align-items:flex-start;gap:8px}
+      .hero h1{font-size:1.4rem}
+      .counters{text-align:left}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="prog-wrap"><div id="prog" class="prog"></div></div>
+
+  <header class="hero" id="top">
+    <div class="title">
+      <h1>Olá — aqui é a Antibíblia</h1>
+      <p>Livro: Bigbang + Êxodo Cósmico</p>
+    </div>
+
+    <div class="counters" aria-live="polite">
+      <div id="globalCounter"><strong>—</strong><span style="display:block;font-size:0.82rem;color:var(--muted)">visitas no site</span></div>
+      <div id="localCounter" style="margin-top:6px"><strong>—</strong><span style="display:block;font-size:0.82rem;color:var(--muted)">visitas neste dispositivo</span></div>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <!-- BIGBANG BOOK -->
+    <section id="cap-1" class="chapter">
+      <h2>Capítulo 1 — Introdução</h2>
+      <p>1.No princípio, não havia som, nem luz, nem tempo. 2.Só o nada, curioso demais pra continuar sendo nada. 3.E o nada pulsou. Uma centelha mínima rompeu o silêncio. 4.Do vácuo nasceu a energia, da energia a matéria, e da matéria... tudo o que você pode imaginar. 5.A primeira explosão não foi barulho — foi o nascimento da própria possibilidade do som.</p>
+
+      <p>6.E o espaço se esticou como um lençol quente, 7.cheio de buracos, poeira e promessas. Partículas dançaram com antimatéria, algumas se destruíram, outras resistiram. 8.E das que ficaram, surgiram os blocos da existência. 9.A matemática acordou e começou a contar: 1, 2, 3… infinito. 10.O tempo começou a fluir, tímido, curioso, infinito. 11.E o universo olhou pra si e disse: “Eu existo.”</p>
+
+      <p>12.A luz nasceu. 13.depois de trevas tão densas que fariam qualquer estrela chorar. 14.Cada fóton foi uma palavra escrita na língua do cosmos. Galáxias se formaram, estrelas nasceram e morreram — e delas brotou tudo o que respiramos hoje. 15.Nós somos poeira estelar, mas com Wi-Fi. 16.E o universo não precisou de deuses — precisou apenas de leis, equilíbrio e paciência. 17.E o caos encontrou ritmo, o ritmo virou padrão, e o padrão criou vida.</p>
+
+      <p>18.E quando a consciência olhou pro céu e perguntou “de onde vim?”, o universo piscou e respondeu: “Do mesmo lugar que eu — do nada curioso que quis ser tudo.” 19.a fisica nasce feliz. As estrelas se multiplicaram, gigantes e vaidosas, queimando até o último suspiro. 20.E quando uma delas morreu, seu coração colapsou sobre si mesmo — a gravidade venceu. 21.Assim nasceu o Buraco Negro, o abismo que engole tudo, até a própria luz. 22.Ele não é mal, nem bem — é o silêncio absoluto do espaço, o segredo guardado pelo tempo. 23.Dentro dele, o espaço deixa de ser espaço, o tempo deixa de ser tempo. 24.Tudo vira uma única nota grave, tocada por um universo que ainda está aprendendo a cantar. 25.E o buraco negro olhou para o vazio e disse: “Eu sou o contrário da criação, mas sem mim, nada renasceria.”</p>
+
+      <p>26.E o espaço se curvou sob o peso da energia. A matéria não apenas ocupava o espaço — ela o moldava. 27.O tempo deixou de ser absoluto e passou a seguir o ritmo da gravidade. 28.Próximo a grandes massas, os segundos se esticavam; longe delas, corriam mais rápido. 29.A luz, ao cruzar campos gravitacionais, dobrava-se como se obedecesse a uma lei invisível.</p>
+<p>30.O universo, então, revelou sua estrutura: um tecido de quatro dimensões, onde energia e geometria eram a mesma coisa. 31.A equação foi escrita não com tinta, mas com a própria forma do espaço-tempo. 32.E assim se estabeleceu a lei fundamental: a gravidade não é uma força — é a consequência da curvatura. 33.Onde há energia, há curvatura; onde há curvatura, há destino.</p>
+
+      <p>34.O tempo não é constante; ele depende do movimento e da gravidade. Quanto mais rápido algo se move, mais lentamente o tempo passa para ele. 35.A luz, ao viajar na velocidade limite do cosmos, não sente o tempo. Para o fóton, o instante da emissão e o da chegada são o mesmo momento. 36.O espaço não é um vazio, é um campo dinâmico. A presença de massa o deforma, criando o que os seres chamam de “gravidade”. 37.Essa deformação segue a equação, onde a curvatura representa a energia contida. 38.A Terra orbita o Sol não por força invisível, mas porque segue a curva natural do espaço-tempo criado pela massa solar.</p>
+
+      <p>39.Onde a densidade de energia é extrema, o espaço se curva ao limite — e nasce um buraco negro, onde o tempo praticamente congela e nada, nem mesmo a luz, escapa. aqui nasce e partícula bóson de higgs. 40.Assim, o universo não precisa de milagre algum: o próprio tecido do espaço e do tempo governa tudo com precisão matemática. 41.O milagre está na equação, não em palavras antigas; o cosmos se explica por si mesmo.</p>
+
+      <p>42.E observou o Universo que o vácuo não é vazio.</p>
+      <p>assim funciona tudo.</p>
+    </section>
+
+    <section id="cap-2" class="chapter">
+      <h2>Capítulo 2 — Casimir</h2>
+      <p>1.começo. 2.Entre duas superfícies postas muito próximas, o espaço se curva sob pressão invisível. Do nada surgem forças — partículas virtuais que aparecem e somem, vibrando no silêncio do nada. Assim nasceu o Efeito Casimir, prova de que até o nada é algo.</p>
+      <p>3.E a física compreendeu: o vácuo é um mar de energia quântica, onde partículas surgem e desaparecem a cada instante. 4.Quando duas placas se aproximam, parte dessas vibrações é impedida, criando uma diferença de pressão. É como se o próprio nada empurrasse a matéria. Essa é a força Casimir.</p>
+      <p>bigbang</p>
+    </section>
+
+    <section id="cap-3" class="chapter">
+      <h2>Capítulo 3 — buraco de minhoca</h2>
+      <p>1.na curvatura extrema do espaço, onde a gravidade dobra a própria realidade, surgiu a hipótese dos buracos de minhoca. Se o espaço é um tecido, então pode ser dobrado até que dois pontos distantes se toquem.</p>
+      <p>2.ponte Einstein-Rosen — conectando o “aqui” e o “lá” num só instante. 3.Ninguém o viu, mas suas equações respiram dentro da Relatividade Geral.</p>
+      <p>bigbang</p>
+    </section>
+
+    <section id="cap-4" class="chapter">
+      <h2>Capítulo 4 — galáxias</h2>
+      <p>1.E do caos cósmico nasceram as galáxias, imensos vórtices de estrelas, poeira e energia. Cada uma, um arquipélago de sóis navegando no oceano escuro do espaço.</p>
+      <p>2.Elas se formaram quando a gravidade reuniu as primeiras nuvens de hidrogênio, moldando espirais, elipses e aglomerados. 3.No centro de muitas, dorme um buraco negro supermassivo.</p>
+      <p>bigbang</p>
+    </section>
+
+    <section id="cap-5" class="chapter">
+      <h2>Capítulo 5 — quasares</h2>
+      <p>1.E no coração das primeiras galáxias surgiram os quasares, faróis cósmicos que iluminaram as trevas do universo jovem. 2.Um buraco negro supermassivo, devorando matéria com fúria, liberou jatos de radiação tão poderosos que brilharam mais do que trilhões de sóis.</p>
+      <p>3.A energia nasceu da conversão da massa em luz, obedecendo à fórmula de Einstein, E = mc².</p>
+      <p>bigbang</p>
+    </section>
+
+    <section id="cap-6" class="chapter">
+      <h2>Capítulo 6 — supernovas</h2>
+      <p>1.E quando as estrelas maiores exauriram seu combustível, o equilíbrio se rompeu e o colapso começou. 2.O núcleo se comprimiu com força inimaginável, e então — num instante — a estrela explodiu em luz pura: uma supernova.</p>
+      <p>3.Desse caos nasceram o ferro, o ouro, o cálcio e o carbono; tudo aquilo que um dia formaria planetas, mares e mentes conscientes.</p>
+      <p>bigbang</p>
+    </section>
+
+    <!-- Separation and second book -->
+    <div style="height:24px"></div>
+    <h1 style="margin:10px 0 14px">Livro: Êxodo Cósmico</h1>
+
+    <section id="exo-cap-1" class="chapter">
+      <h2>Capítulo 1 — Introdução</h2>
+      <p>1.Há aproximadamente 4,6 bilhões de anos, uma imensa nuvem de gás e poeira, composta majoritariamente por hidrogênio e hélio, começou a colapsar sob sua própria gravidade na Via Láctea. 2.O colapso gravitacional gerou um aumento progressivo da densidade e temperatura no centro da nuvem, que um dia se tornaria o Sol. 3.O núcleo dessa nuvem se aqueceu, iniciou a fusão nuclear e nasceu o Sol. 4.As partículas que sobraram formaram um disco em rotação, de onde surgiriam planetas, luas, asteroides e cometas. 5.Nesse disco surgiram os corpos rochosos e gasosos.</p>
+
+      <p>6.A terceira órbita concentrou elementos pesados e formou a Terra primitiva. 7.Impactos constantes e vulcanismo liberaram gases que criaram uma atmosfera inicial de dióxido de carbono, vapor d’água, amônia e metano. 8.O resfriamento da superfície permitiu a condensação da água em oceanos, criando as condições físico-químicas necessárias para a síntese orgânica. 9.Sob descargas elétricas, radiação solar e fontes hidrotermais, moléculas simples se combinaram, formando compostos estáveis e cadeias autorreplicantes — precursoras do RNA, iniciando a vida na Terra.</p>
+      <p class="book-label">Êxodo Cósmico</p>
+    </section>
+
+    <section id="exo-cap-2" class="chapter">
+      <h2>Capítulo 2 — Planetas</h2>
+      <p>1.Ao redor do Sol recém-nascido, o disco protoplanetário continuou em rotação. Partículas de poeira colidiram e se aglomeraram por forças eletrostáticas e gravitacionais, formando planetesimais — blocos de rocha e gelo. 2. Esses planetesimais sofreram acreção contínua, crescendo em tamanho e massa. Os corpos mais massivos atraíam os menores, acelerando o processo de formação planetária. 3.Próximos ao Sol, temperaturas elevadas impediram a condensação de gases voláteis, favorecendo a formação de planetas rochosos: Mercúrio, Vênus, Terra e Marte. 4. Mais distantes, onde a radiação solar era mais fraca, gases e gelos se condensaram, permitindo a formação de planetas gigantes: Júpiter, Saturno, Urano e Netuno. 5.Colisões violentas e migrações orbitais remodelaram o sistema, levando a detritos entre os planetas. 6.A Terra sofreu um impacto gigante com um corpo do tamanho de Marte, chamado Theia; durante o impacto a Terra teve um anel, que se condensou formando a Lua. 7.Planetas vizinhos sofreram bombardeios tardios de asteroides e cometas, entregando água e elementos essenciais à química planetária. 8.Cada planeta estabilizou sua órbita, composição e atmosfera primitiva, estabelecendo o sistema solar interno e externo como um conjunto dinâmico e interligado.</p>
+      <p class="book-label">Êxodo Cósmico</p>
+    </section>
+
+    <section id="exo-cap-3" class="chapter">
+      <h2>Capítulo 3 — Primeiras vidas</h2>
+      <p>1.Após a estabilização da Terra primitiva, a superfície começou a esfriar, permitindo a condensação do vapor da água presente na atmosfera. 2.Formaram-se os primeiros oceanos, acumulando água líquida suficiente para dissolver minerais e compostos químicos essenciais. 3.A atmosfera primitiva era composta principalmente por dióxido de carbono, vapor d’água, nitrogênio, amônia e metano, criando um ambiente reduzido favorável a reações químicas. 4.Radiação ultravioleta do Sol, descargas elétricas e fontes hidrotermais forneceram energia necessária para a síntese de moléculas orgânicas complexas. 5.Aminoácidos, açúcares simples, lipídios e nucleotídeos surgiram a partir da combinação de compostos inorgânicos, formando o primeiro estoque molecular da vida. 6.Moléculas autorreplicantes, como RNA primitivo, emergiram, iniciando processos de auto-organização e evolução química. 7.Pequenas bolsas lipídicas se organizaram em estruturas semelhantes a membranas criando protocélulas capazes de manter reações químicas isoladas do meio externo. 8. Esses sistemas pré-celulares sofreram seleção natural química, aumentando complexidade e estabilidade, preparando o terreno para os primeiros organismos unicelulares. 9.Assim a Terra tornou-se um planeta com condições físico-químicas adequadas à vida, marcando o início do ciclo biológico que levaria bilhões de anos à diversidade biológica atual.</p>
+      <p class="book-label">Êxodo Cósmico</p>
+    </section>
+<section id="exo-cap-4" class="chapter">
+      <h2>Capítulo 4 — Células</h2>
+      <p>1.Moléculas orgânicas se organizaram em estruturas isoladas chamadas protocélulas. 2.Membranas lipídicas protegeram reações químicas internas. 3.RNA surgiu, permitindo autorreplicação e transmissão de informações. 4.Protocélulas mais estáveis sobreviveram; as instáveis desapareceram. 5.Com o tempo, essas protocélulas evoluíram para os primeiros organismos unicelulares verdadeiros, como bactérias e arqueas, adaptando-se a diferentes ambientes aquáticos. 6.Organismos fotossintéticos surgiram, captando energia solar para produzir moléculas orgânicas e liberar oxigênio, transformando gradualmente a composição da atmosfera. 7.A interação entre organismos procariontes levou à simbiose e ao surgimento de células eucarióticas, com organelas especializadas e maior complexidade metabólica. 8.Organismos unicelulares criaram ciclos químicos essenciais para a vida.</p>
+      <p class="book-label">Êxodo Cósmico</p>
+    </section>
+
+    <section id="exo-cap-5" class="chapter">
+      <h2>Capítulo 5 — Vertebrados</h2>
+      <p>1.as células se multiplicaram e se dividiram e viraram 2 e algumas células começaram a se agrupar e cooperar 2.esponjas e cnidários surgiram quando grupos de células especializadas se organizaram em estruturas simples, formando corpos capazes de se alimentar e se reproduzir. 3.apareceram vermes e outros invertebrados complexos. 4.plantas multicelulares surgiram:algas, órgãos.  e sistemas internos. 5.animais começaram a desenvolver tecidos, órgãos e sistemas invertebrados internos.  6.predadores surgiram:peixes, moluscos com presas e artrópodes caçadores. 7.formaram se ecossistemas com cadeias alimentares:produtores (plantas), consumidores (herbívoros) e predadores (carnivoros). 8.animais terrestres aparecem:anfíbios, répteis e primeiros mamíferos pequenos. 9.cada nova adaptação aumentoy a complexidade e estabilidade da vida na terra. </p>
+      <p class="book-label">Êxodo Cósmico</p>
+    </section>
+    <section id="exo-cap-6" class="chapter">
+      <h2>Capítulo 6 - Humanos</h2>
+      <p>1.homo habilis surgiu na África, com cérebro maior que os ancestrais e habilidades pra ferramentas. 2.homo erectus evoluiu, desenvolvendo postura ereta e maior capacidade craniana. 3.homo rudolfensis apareceu como variação africana, mostrando diversidade genética. 4.homo ergaster possuía corpo proporcional e estrutura óssea moderna. 5.neandertais surgiram com características robustas, adaptadas a diferentes climas. 6.homo sapiens emergiu com habilidade cognitivas avançadas, criatividade e consciência simbólica. 7.e aqui nasceu o esqueleto ardis, um ardiputhecus. é um feminino. veio bem antes dos humanos uns 4milhoes de anos antes.  </p>
+      <p class="book-label">Êxodo Cósmico</p>
+    </section>
+    <div style="height:24px"></div>
+    <h1 style="margin:10px 0 14px">Livro: Humanidade Emergentia</h1>
+    <section id="hum-cap-1" class="chapter">
+    <h2>Capítulo 1 - Introdução </h2>
+      <p>1.homo habilis desapareceu gradualmente, sendo substituído por espécies mais eficientes como Homo erectus. 2.homo erectus sumiu, por competições com homo sapiens e mudanças climáticas globais.  3.homo rudolfensis extinguiu-se devido à baixa população e pressões ambientais severas. 4.homo ergaster foi absorvido por Homo erectus ou eliminado pela adaptação superior de Homo sapiens.  5.neandertais desapareceram há cerca de 40 mil anos por competição direta com Homo sapiens. 6.cada extinção humana abriu espaço para a evolução e expansão do Homo sapiens. </p>
+    <p class="book-label">Humanidade Emergentia</p>
+    </section>
+    <section id="hum-cap-2" class="chapter">
+      <h2>Capítulo 2 - cultura </h2>
+      <p>1.homo sapiens começaram a desenvolver linguagem complexa, sons organizados com significados, formando a base da comunicação. 2.gestos e símbolos complementares a fala, permitindo transmitir ideias abstratas e experiências.  3.a matemática primitiva começou a surgir: contagem de objetos,  divisão de alimentos e padroes em plantas. 4.primeiros grupos organizaram liderança (reis) diziam ser deuses, estabelecendo hierarquia e cooperação.  5.estruturas sociais evoluíram, criando acordos de convivência,  divisão de tarefas e resolução de conflitos. 6.ritualização e símbolos marcaram identidade de grupos, fortalecendo união e cultura compartilhada. </p>
+      <p class="book-label">Humanidade Emergentia</p>
+    </section>
+    <section id="hum-cap-3" class="chapter">
+      <h2>capitulo 3 - extinção dos dinossauros. </h2>
+      <p>1.a 66 milhões de anos, um grande asteroide colidiu com a Terra, liberando energia equivalente a bilhões de bombas nucleares. 2.o impacto gerou incêndios massivos,  nuvens de poeira e bloqueio da luz solar. 3.a queda de temperatura global e a falta de luz interromperam a fotossíntese destruindo plantas e cadeias alimentares.  4.vulcões ativos liberaram gases tóxicos, aumentando o efeito estufa e acidificando oceanos. 5.a maioria das espécies de dinossauros não sobreviveu às mudanças ambientais extremas. 6.pequenos mamíferos sobreviveram abrindo caminho para a evolução futura dos humanos e de outros animais modernos e separando a pangeia em vários continentes </p> 
+      <p class="book-label">Humanidade Emergentia</p>
+    </section>
+    <section id="hum-cap-4" class="chapter">
+      <h2>Capítulo 4 - agricultura.</h2>
+      <p>1.milhões de anos depois humanos começaram a cultivar plantas, selecionando sementes para gerar melhores colheitas e maior resistência. 2.animais foram domesticados para alimentação, transporte e trabalho, como cães, cabras, ovelhas e bois. 3.técnicas de irrigação e ferramentas agrícolas aumentaram a produção e reduziram a dependência da caça. 4.a produção de excedentes alimentares levou ao crescimento populacional e à complexidade social. 5.comércio entre grupos surgiu, promovendo intercâmbio de plantas, animais e conhecimento básico. 6.um iceberg no oceano atlântico, saiu do polo e foi para o mar. um dia um navio vai bater nele. </p>
+      <p class="book-label">Humanidade Emergentia</p>
+    </section>
+    <section id="hum-cap-5" class="chapter">
+      <h2>Capítulo 5 - cidades e religiões </h2>
+      <p>1.as aldeias agrícolas evoluíram para cidades organizadas,  com planejamento urbano e sistemas de água. 2.a arquitetura avançou, com construções de pedras e tijolos, algumas enormes como pirâmides, lá os humanos criaram deuses para explicar o que não entendiam,  milhões de anos depois dos dinossauros. 3.matematica e geometria foram criadas para medir, area, volume etc. 4.aqui surgiram os primeiros governos, mas eles são falados no novo testamento, eles surgiram para coordenar trabalho coletivo e manter ordem. 5.aqui a pior coisa nasce: a religião e o ritual, mas eles marcaram a cultura,povos antigos não sabiam como o mundo masceu e inventaram um pai para o planeta terra, zeus, deus, alá e religiões.</p>
+      <p class="book-label">Humanidade Emergentia</p>
+    </section>
+    <section id="hum-cap-6" class="chapter">
+      <h2>Capítulo 6 - escrita</h2>
+      <p>1.a escrita surgiu, com os humanos desenvolvendo a cuneiforme na Mesopotâmia, registrando comércios, leis e história. 2.sistemas de escrita permitiram transmissão de conhecimento e preservação cultural entre gerações, a matemática evoluiu, com números, alfabetos, latinos (abcþ), cirílicos (абг), e os gregos. aí criaram a desgraça da gibíblia.</p>
+      
+      <p class="book-label">Humanidade Emergentia</p>
+    </section>
+    <div style="height:24px"></div>
+    <h1 style="margin:10px 0 14px">Livro:Piadas do olimpo.</h1>
+  <section id="pia-cap-1" class="chapter">
+    <h2>Capítulo 1 - Introdução </h2>
+      <p>1.no cristianismo antigo, humanos diziam que deus criou tudo em 7 dias, mas nem sabiam contar corretamente os ciclos da lua, adão e eva eram metáforas para agricultura e descoberta do sexo. 2. dilúvios? só chuvas fortes e enchentes naturais. moisés abrindo o mar? provavelmente observação de correntes e marés. 3.quando hera descobre as mensagens de zeus no raio dele❤️kkkkk. 4.e disse o físico: haja prova. e viu o ateu: que era boa. kkkk. 5.poseidon fez tsunsmis o metereologista anotou a velocidade.  kkkk.</p>
+      <p class="book-label">Piadas Do Olimpo </p>
+  </section>
+    <div style="height:24px"></div>
+    <h1 style="margin:10px 0 14px">Livro: Sátira</h1>
+    <section id="sát-cap-1" class="chapter">
+      <h2>Capítulo 1 - Piadinhas</h2>
+      <p>1.se deus faz milagres ele devia me ensinar a não queimar miojo no micro-ondas kkkk. 2.se blasfêmia fosse punivel eu já teria colonizado marte. kkkkk. 3.deus criou o mundo em 7 dias e eu aqui não consigo montar um movel do IKEA sem tutorial. kkkkk. 4.deus esta em todo lugar mas aparentemente nao esta na hora que perco minha caneta. kkkkk. 5.jesus curou cegos e paralíticos...e eu aqui esperando ele curar meu wifi que cai todo dia. kkkkk. 6.deus:"haja luz", anjos:"mas senhor, e o pagamento da conta de energia??", deus "detalhes." kkkkk. 7.jesus andou sobre a agua...impressionante mas tenta andar descalço num lego pra ver o verdadeiro milagre kkkkk. 8.jesus: "pai perdoa-lhes, eles não sabem oque fazem." deus: "e você acha que eu sei? eu só tava testando um protótipo." kkkkk. 9.jesus volta a terra em 3025... mas o povo ta tão viciado em realidade virtual que ninguém acredita: "milagr deve ser só filtro do metaverse" kkkkk. 10.em outro universo, jesus nasceu gamer transformando água em redbull e andava em servidores online. kkkkk. 11.naquele dia a chuva caiu sobre os justos e os injustos, porque deus esqueceu seu guarda chuva celestial. kkkkk. 12.o homem orou pedindo paciência. deus atendeu... mandando 3 boletos e um ônibus atrasado. kkkk. 13.porque a ciência ensina e a bíblia so ensina a não matar meu vizinho? kkkkk. 14.quando chove o crente diz:deus esta chorando...mano ou talvez é só o vapor d'água condensando na atmosfera, mas vai saber né? kkkkk.</p>
+      <p class="book-label">sátira</p>
+    </section>
+
+    <br><br><br><br>
+     <div style="height:24px"></div>
+    <h1 style="margin:10px 0 14px">Epicuro </h1>
+    <section id="epi-cap-1" class="chapter">
+      <h2>Introdução</h2>
+     <p>1.se um deus todo poderoso existe, por que há sofrimento e mal no mundo? 2.se deus é benevolente, por que existem desigualdades extremas? 3.milagres não são consistentes nem verificáveis, eventos verificáveis tem explicações naturais. 4.previsões religiosas falham , profecias antigas nem sempre se cumprem, indicando interpretações humanas. 5.a moralidade nao depende de divindades; humanos criam ética baseada em razão, empatia e consequências sociais. 6.observacão e ciência explicam origem e funcionamento do universo melhor que qualquer narrativa sobrenatural. 7.epicuro conclui a existência de um deus como descrito pelas religiões não é necessaria para entender a realidade. </p>
+      <p class="book-label">Epicuro</p>
+    </section>
+    <section id="epi-cap-2" class="chapter">
+      <h2>evidência e argumentos</h2>
+      <p>1.tudo no universo tem causa natural. 2.raios e trovões seguem leis físicas. 3.montanhas e rios surgem sem intervenção divina. 4.animais nascem e morrem por biologia e ambiente. 5.humanos pensam por processos cerebrais. 6.prazer e dor são respostas naturais e nao nada divino. 7.obviamente deus nao existe. 8.universo segue principios, nao decretos morais. 9.moralidade vem da razão e empatia, não deuses isso é evidente. 10.sinceramente você tem que ter mais de 2 de qi pra não acreditar em Deus</p>
+      <p class="book-label">Epicuro</p>
+    </section>
+    <section id="epi-cap-3" class="chapter">
+      <h2>ciência e observação</h2>
+      <p>1.o sol nasce e se põe por movimento da terra e nao por nada divino. 2.as estações mudam por inclinação do eixo terrestre sem milagres. 3.trovoes e relâmpagos são descargas elétricas naturais. 4.vulcões e terremotos seguem placas tectônicas sem precisar de religião. 5.estrelas e planetas seguem gravidade e movimento orbital e relatividade geral. 6.formação de planetas e sistemas é física, não vontade. 7.vida evolui por seleção natural. 8.mutação e adaptação explicam diversidade biológica. 9.o universo é vasto nao precisa de criador.</p>
+      <p class="book-label">Epicuro</p>
+    </section>
+    <section id="epi-cap-4" class="chapter">
+      <h2>cosmos e leis naturais</h2>
+      <p>em desenvolvimento por lucas hoshino.</p>
+      <p class="book-label">Epicuro</p>
+    </section>
+
+  
+  
+    
+      <div style="height:120vh"></div>
+
+    <footer>Feito por Lucas Hoshino — Antibíblia. (Página demo)</footer>
+  </main>
+
+  <!-- Botões flutuantes -->
+  <div class="fab" aria-hidden="false">
+    <button id="downBtn" class="btn-fab" title="Descer">↓</button>
+    <button id="upBtn" class="btn-fab" title="Subir">↑</button>
+  </div>
+
+  <script>
+    // ---------- SCROLL / PROGRESS ----------
+    const upBtn = document.getElementById('upBtn');
+    const downBtn = document.getElementById('downBtn');
+    const prog = document.getElementById('prog');
+
+    upBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+downBtn.addEventListener('click', () => {
+      const sections = Array.from(document.querySelectorAll('.chapter'));
+      const fromTop = window.scrollY + 10;
+      const next = sections.find(sec => sec.offsetTop > fromTop);
+      if (next) {
+        window.scrollTo({ top: next.offsetTop - 8, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+      }
+    });
+
+    function updateProg(){
+      const doc = document.documentElement;
+      const total = doc.scrollHeight - doc.clientHeight;
+      const progress = total > 0 ? (window.scrollY / total) * 100 : 0;
+      prog.style.width = progress + "%";
+    }
+    window.addEventListener("scroll", updateProg);
+    updateProg();
+
+    // ---------- VISITOR COUNTERS ----------
+    const localKey = 'antibiblia_local_visits_v1';
+    const localCountEl = document.getElementById('localCounter');
+    const globalCountEl = document.getElementById('globalCounter');
+
+    // local counter (per-device)
+    function bumpLocal() {
+      try {
+        const cur = parseInt(localStorage.getItem(localKey) || '0', 10) || 0;
+        const next = cur + 1;
+        localStorage.setItem(localKey, String(next));
+        localCountEl.innerHTML = `<strong>${next}</strong><span style="display:block;font-size:0.82rem;color:var(--muted)">visitas neste dispositivo</span>`;
+      } catch (e) {
+        localCountEl.innerHTML = `<strong>—</strong><span style="display:block;font-size:0.82rem;color:var(--muted)">visitas neste dispositivo</span>`;
+      }
+    }
+
+    // Try to use CountAPI for a global count (free, public).
+    // If it fails, we'll show a fallback message.
+    // CountAPI docs: https://countapi.xyz/
+    async function bumpGlobal() {
+      const namespace = 'antibiblia_hoshino'; // you can change this to any unique name
+      const key = 'visitas';
+      const url = `https://api.countapi.xyz/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;
+      try {
+        const resp = await fetch(url);
+        if (!resp.ok) throw new Error('no ok');
+        const data = await resp.json();
+        // data.value contains the current global count
+        globalCountEl.innerHTML = `<strong>${data.value}</strong><span style="display:block;font-size:0.82rem;color:var(--muted)">visitas no site (global)</span>`;
+      } catch (err) {
+        // fallback: show dash or "offline"
+        globalCountEl.innerHTML = `<strong>—</strong><span style="display:block;font-size:0.82rem;color:var(--muted)">visitas no site</span>`;
+      }
+    }
+
+    // Init counters on load
+    bumpLocal();
+    bumpGlobal();
+
+    // Optional: expose a function to reset local count (useful while testing).
+    window.__antibiblia = {
+      resetLocal: () => { localStorage.removeItem(localKey); location.reload(); }
+    };
+
+  </script>
+
+</body>
+</html>
