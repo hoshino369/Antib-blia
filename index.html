@@ -19,7 +19,7 @@
       -webkit-font-smoothing:antialiased;
     }
 
-    /* HERO */
+    
     .hero{
       min-height:28vh;
       display:flex;
@@ -56,7 +56,7 @@
 
     p{margin:12px 0; white-space:pre-wrap}
 
-    /* BOTÕES FIXOS SUBIR/DESER */
+    
     .fab{
       position:fixed;
       right:18px;
@@ -77,7 +77,7 @@
     .btn-fab:hover{transform:translateY(-4px)}
     .btn-fab[hidden]{opacity:0;pointer-events:none;transform:scale(.95)}
 
-    /* INDICADOR DE PROGRESSO */
+    
     .prog-wrap{
       position:fixed;
       left:0;top:0;
@@ -122,7 +122,7 @@
 
   <main class="content">
 
-    <!-- BIGBANG BOOK -->
+    
     <section id="cap-1" class="chapter">
       <h2>Capítulo 1 — Introdução</h2>
       <p>1.No princípio, não havia som, nem luz, nem tempo. 2.Só o nada, curioso demais pra continuar sendo nada. 3.E o nada pulsou. Uma centelha mínima rompeu o silêncio. 4.Do vácuo nasceu a energia, da energia a matéria, e da matéria... tudo o que você pode imaginar. 5.A primeira explosão não foi barulho — foi o nascimento da própria possibilidade do som.</p>
@@ -179,7 +179,7 @@
       <p>bigbang</p>
     </section>
 
-    <!-- Separation and second book -->
+    
     <div style="height:24px"></div>
     <h1 style="margin:10px 0 14px">Livro: Êxodo Cósmico</h1>
 
@@ -320,14 +320,14 @@
     <footer>Feito por Lucas Hoshino — Antibíblia. (Página demo)</footer>
   </main>
 
-  <!-- Botões flutuantes -->
+  
   <div class="fab" aria-hidden="false">
     <button id="downBtn" class="btn-fab" title="Descer">↓</button>
     <button id="upBtn" class="btn-fab" title="Subir">↑</button>
   </div>
 
   <script>
-    // ---------- SCROLL / PROGRESS ----------
+    
     const upBtn = document.getElementById('upBtn');
     const downBtn = document.getElementById('downBtn');
     const prog = document.getElementById('prog');
@@ -354,12 +354,12 @@ downBtn.addEventListener('click', () => {
     window.addEventListener("scroll", updateProg);
     updateProg();
 
-    // ---------- VISITOR COUNTERS ----------
+    //n sei se vai funcionar sem pho mas fds
     const localKey = 'antibiblia_local_visits_v1';
     const localCountEl = document.getElementById('localCounter');
     const globalCountEl = document.getElementById('globalCounter');
 
-    // local counter (per-device)
+    
     function bumpLocal() {
       try {
         const cur = parseInt(localStorage.getItem(localKey) || '0', 10) || 0;
