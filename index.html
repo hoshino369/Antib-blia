@@ -104,7 +104,64 @@ footer{
 
   </style>  
 </head>  
-<body>    <div class="prog-wrap"><div id="prog" class="prog"></div></div>    <header class="hero" id="top">  
+<body>  
+	<style>
+/* === Efeito Casimir === */
+.casimir-theme {
+  background: #1a1a1a; /* fundo escuro para destacar profundidade */
+  color: #f0f0f0;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 2px 6px rgba(0,0,0,0.4),    /* sombra principal suave */
+    0 10px 20px rgba(0,0,0,0.15),  /* profundidade sutil */
+    inset 0 -2px 6px rgba(255,255,255,0.05); /* leve brilho interno */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Leve “flutuação” ao passar o mouse */
+.casimir-theme:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 4px 12px rgba(0,0,0,0.5),
+    0 15px 25px rgba(0,0,0,0.2),
+    inset 0 -2px 6px rgba(255,255,255,0.08);
+}
+
+/* Títulos discretos, mas com leve destaque */
+.casimir-theme h2 {
+  font-size: 1.8rem;
+  color: #e0e0e0;
+  border-left: 4px solid #00d9ff;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* Parágrafos elegantes */
+.casimir-theme p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Etiqueta discreta */
+.casimir-theme .book-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #aaa;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 8px;
+  margin-top: 12px;
+  display: inline-block;
+}
+	</style>
+	<div class="prog-wrap"><div id="prog" class="prog"></div></div>    <header class="hero" id="top">  
     <div class="title">  
       <h1>Antibíblia</h1>  
       <p>12+, contem critica, palavroes e satira.</p>
@@ -132,9 +189,7 @@ footer{
   <p>assim funciona tudo.</p>  
 </section>  
 
-<section id="cap-2" class="chapter">  
-  <h2>Capítulo 2 — Casimir</h2>  
-  <p>1.começo. 2.Entre duas superfícies postas muito próximas, o espaço se curva sob pressão invisível. Do nada surgem forças — partículas virtuais que aparecem e somem, vibrando no silêncio do nada. Assim nasceu o Efeito Casimir, prova de que até o nada é algo.</p>  
+<section id="cap-2" class="casimir-theme">   <h2>Capítulo 2 — Casimir</h2>   2.Entre duas superfícies postas muito próximas, o espaço se curva sob pressão invisível. Do nada surgem forças — partículas virtuais que aparecem e somem, vibrando no silêncio do nada. Assim nasceu o Efeito Casimir, prova de que até o nada é algo.</p>  
   <p>3.E a física compreendeu: o vácuo é um mar de energia quântica, onde partículas surgem e desaparecem a cada instante. 4.Quando duas placas se aproximam, parte dessas vibrações é impedida, criando uma diferença de pressão. É como se o próprio nada empurrasse a matéria. Essa é a força Casimir.</p>  
   <p>bigbang</p>  
 </section>  
