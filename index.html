@@ -1380,22 +1380,7 @@ downBtn.addEventListener('click', () => {
     window.addEventListener("scroll", updateProg);  
     updateProg();  
   
-    //n sei se vai funcionar sem backend mas fds  
-    const localKey = 'antibiblia_local_visits_v1';  
-    const localCountEl = document.getElementById('localCounter');  
-    const globalCountEl = document.getElementById('globalCounter');  
-  
-      
-    function bumpLocal() {  
-      try {  
-        const cur = parseInt(localStorage.getItem(localKey) || '0', 10) || 0;  
-        const next = cur + 1;  
-        localStorage.setItem(localKey, String(next));  
-        localCountEl.innerHTML = `<strong>${next}</strong><span style="display:block;font-size:0.82rem;color:var(--muted)">visitas neste dispositivo</span>`;  
-      } catch (e) {  
-        localCountEl.innerHTML = `<strong>—</strong><span style="display:block;font-size:0.82rem;color:var(--muted)">visitas neste dispositivo</span>`;  
-      }  
-    }  
+    
   
     // Try to use CountAPI for a global count (free, public).  
     // If it fails, we'll show a fallback message.  
