@@ -1382,33 +1382,7 @@ downBtn.addEventListener('click', () => {
   
     
   
-    // Try to use CountAPI for a global count (free, public).  
-    // If it fails, we'll show a fallback message.  
-    // CountAPI docs: https://countapi.xyz/  
-    async function bumpGlobal() {  
-      const namespace = 'antibiblia_hoshino'; // you can change this to any unique name  
-      const key = 'visitas';  
-      const url = `https://api.countapi.xyz/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;  
-      try {  
-        const resp = await fetch(url);  
-        if (!resp.ok) throw new Error('no ok');  
-        const data = await resp.json();  
-        // data.value contains the current global count  
-        globalCountEl.innerHTML = `<strong>${data.value}</strong><span style="display:block;font-size:0.82rem;color:var(--muted)">visitas no site (global)</span>`;  
-      } catch (err) {  
-        // fallback: show dash or "offline"  
-        globalCountEl.innerHTML = `<strong>—</strong><span style="display:block;font-size:0.82rem;color:var(--muted)">visitas no site</span>`;  
-      }  
-    }  
-  
-    // Init counters on load  
-    bumpLocal();  
-    bumpGlobal();  
-  
-    // Optional: expose a function to reset local count (useful while testing).  
-    window.__antibiblia = {  
-      resetLocal: () => { localStorage.removeItem(localKey); location.reload(); }  
-    };  
+    
   
   </script>  </body>  
 </html>  		
