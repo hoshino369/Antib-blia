@@ -94,7 +94,24 @@ footer{
   .hero h1{font-size:1.4rem}  
   
 }
-
+	  #livro {
+  display: none;
+    
+	  }
+#capa {
+  min-height: 100vh;
+  background: radial-gradient(
+    circle at top,
+    white,
+    yellow
+  );
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
   </style>  
 </head>  
 <body>  
@@ -154,6 +171,13 @@ footer{
   display: inline-block;
 }
 	</style>
+	 <div id="capa">
+  <h1>Antibíblia</h1>
+  <p>ciência acima da crença<br>razão antes da superstição</p>
+  <button onclick="abrirLivro()">Ler</button>
+</div>
+
+<div id="livro">
 	<div class="prog-wrap"><div id="prog" class="prog"></div></div>    <header class="hero" id="top">  
     <div class="title">  
       <h1>Antibíblia</h1>  
@@ -1351,52 +1375,51 @@ Ondas de som cantam em múltiplos de 3, campos eletromagnéticos se dobram em tr
   
   <div style="height:120vh"></div>  
 
-<footer> velho e novo testamento completo</footer>
+<footer>velho e novo testamento completo</footer>
 
-  </main>    <div class="fab" aria-hidden="false">  
-    <button id="downBtn" class="btn-fab" title="Descer">↓</button>  
-    <button id="upBtn" class="btn-fab" title="Subir">↑</button>  
-  </div>    <script>  
-      
-    const upBtn = document.getElementById('upBtn');  
-    const downBtn = document.getElementById('downBtn');  
-    const prog = document.getElementById('prog');  
-  
-    upBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));  
-  
-downBtn.addEventListener('click', () => {  
-      const sections = Array.from(document.querySelectorAll('.chapter'));  
-      const fromTop = window.scrollY + 10;  
-      const next = sections.find(sec => sec.offsetTop > fromTop);  
-      if (next) {  
-        window.scrollTo({ top: next.offsetTop - 8, behavior: 'smooth' });  
-      } else {  
-        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });  
-      }  
-    });  
-  
-    function updateProg(){  
-      const doc = document.documentElement;  
-      const total = doc.scrollHeight - doc.clientHeight;  
-      const progress = total > 0 ? (window.scrollY / total) * 100 : 0;  
-      prog.style.width = progress + "%";  
+<div class="fab" aria-hidden="false">  
+  <button id="downBtn" class="btn-fab" title="Descer">↓</button>  
+  <button id="upBtn" class="btn-fab" title="Subir">↑</button>  
+</div>
+
+<script>  
+  function abrirLivro() {
+    document.getElementById("capa").style.display = "none";
+    document.getElementById("livro").style.display = "block";
+  }
+
+  const upBtn = document.getElementById('upBtn');  
+  const downBtn = document.getElementById('downBtn');  
+  const prog = document.getElementById('prog');  
+
+  upBtn.addEventListener('click', () => 
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  );  
+
+  downBtn.addEventListener('click', () => {  
+    const sections = Array.from(document.querySelectorAll('.chapter'));  
+    const fromTop = window.scrollY + 10;  
+    const next = sections.find(sec => sec.offsetTop > fromTop);  
+
+    if (next) {  
+      window.scrollTo({ top: next.offsetTop - 8, behavior: 'smooth' });  
+    } else {  
+      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });  
     }  
-    window.addEventListener("scroll", updateProg);  
-    updateProg();  
-  
-    
-  
-    
-  
-  </script>  </body>  
-</html>  		
-		
-				
-		
-		
-			
-		
-		
-		
-			
-		
+  });  
+
+  function updateProg(){  
+    const doc = document.documentElement;  
+    const total = doc.scrollHeight - doc.clientHeight;  
+    const progress = total > 0 ? (window.scrollY / total) * 100 : 0;  
+    prog.style.width = progress + "%";  
+  }  
+
+  window.addEventListener("scroll", updateProg);  
+  updateProg();  
+</script>
+
+</main>
+</div>
+</body>
+</html>
