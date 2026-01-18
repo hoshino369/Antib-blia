@@ -102,15 +102,79 @@ footer{
   min-height: 100vh;
   background: radial-gradient(
     circle at top,
-    white,
-    yellow
+    #ffffff 0%,
+    #ffe66d 35%,
+    #ffb703 65%,
+    #fb8500 100%
   );
-  color: black;
+  color: #111;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Título no topo */
+#capa .titulo {
+  position: absolute;
+  top: 40px;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 
+    0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* Subtítulo central */
+#capa .subtitulo {
+  margin-top: 120px;
+  max-width: 700px;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Glow simbólico (tipo aura de livro proibido) */
+#capa::after {
+  content: "";
+  position: absolute;
+  bottom: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.4),
+    transparent 70%
+  );
+  filter: blur(60px);
+}
+	  .cruz {
+  position: absolute;
+  bottom: 40px;
+  width: 80px;
+  height: 120px;
+}
+
+.cruz .vertical {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 20px;
+  height: 120px;
+  background: black;
+  transform: translateX(-50%);
+}
+
+.cruz .horizontal {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 80px;
+  height: 20px;
+  background: black;
 }
   </style>  
 </head>  
@@ -172,8 +236,12 @@ footer{
 }
 	</style>
 	 <div id="capa">
-  <h1>Antibíblia</h1>
+  <h1>Antibíblia sagrada</h1>
   <p>ciência acima da crença<br>razão antes da superstição</p>
+  <div class="cruz">
+  <div class="vertical"></div>
+  <div class="horizontal"></div>
+  </div>
   <button onclick="abrirLivro()">Ler</button>
 </div>
 
